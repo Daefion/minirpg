@@ -1,38 +1,278 @@
-.App {
+* {
+  box-sizing: border-box;
+  
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.top-container {
+  flex: 0 0 20%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background: linear-gradient(white,green);
+  border-style:double;
+  
+}
+
+
+
+
+.MainMap {
+  
+  padding: 40px;
+  font-size: large;
+  color: whitesmoke; 
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  background-image: url(/public/images/Zone1.png);
+  background-position:center;
+  background-size: contain;
+}
+
+.Map2 {
+  
+  padding: 40px;
+  font-size: large;
+  color: whitesmoke; 
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  background-image: url(/public/images/Zone2.png);
+  background-position:center;
+  background-size:cover;
+}
+.Map2.hidden{
+  visibility: hidden;
+}
+
+.Map3 {
+  
+  background-size:cover;
+  padding: 40px;
+  font-size: large;
+  color: whitesmoke; 
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  background-image: url(/public/images/Zone3.png);
+  background-position:center;
+  background-size:cover;
+}
+
+.Map3.hidden{
+  visibility: hidden;
+}
+
+.middle-container {
+  flex: 0 0 60%;
+  background-color: lightgreen;
+  display: flex;
+  background-image: url("/public/images/Map1.png");
+  background-size:cover;
+  background-position: bottom;
+  
+  
+}
+
+.bottom-container {
+  flex: 0 0 20%;
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border:dotted;
+  border-bottom: #3498db;
+}
+
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Center horizontally with space between */
+  height: 100px; /* Adjust the height as needed */
+  background:linear-gradient(green,white); /* Custom background color for the bar */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.InvButton {
+  padding: 20px 25px;
+  background-color: darkgreen; /* Custom background color for the Inventory button */
+  color: #ffffff; /* Text color for the Inventory button */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Skillbar {
+  display: flex;
+  align-items: center;
+  margin:auto;
+}
+
+.Skillbar button {
+  padding: 20px 25px;
+  background-color: #3498db; /* Custom background color for the other buttons */
+  color: #ffffff; /* Text color for the other buttons */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.inventory {
+  background-image: url("/public/images/InvBackground.jpg");
+  background-position: center;
+  border-radius: 2vmin;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size:auto;
+   /* Adjust the gap between buttons in the inventory */
+  margin-top: 10px; /* Add margin at the top of the inventory */
+  align-items: center;
+  color:White;
+  position: absolute;
+  width:50vmin;
+  
+}
+
+.inventory.hidden {
+  visibility: hidden;
+}
+
+.SPlayerStats{
+  color:yellow;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.square {
+  
+  border: 1px solid #999;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-top: -1px;
+  padding: 0;
+  width: 34px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.mage{
+ width:200px;
+ height: 300px;
+ align-self: center;
+ 
+}
+
+.Skl1{
+  align-self: center;
+  margin-top: -10vmin;
+  margin-right: -100vmin;
+  flex-wrap: wrap;
+    
+}
+
+.Skill1{
+  width:100px;
+  height:70px;
+  visibility: hidden;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+}
+
+.fade-enter-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(1000px, 100px, 0);
+  transition: transform 1000ms;
+}
+
+.Skill2{
+width:100px;
+height: 100px;
+rotate: 50deg;
+margin-top:10vmin;
+visibility: hidden;
+}
+
+.Skill22{
+  width:100px;
+  height: 100px;
+  rotate: 50deg;
+  align-self: center;
+  visibility: hidden;
   }
+
+.Skill23{
+  width:100px;
+  height: 100px;
+  rotate: 50deg;
+  align-self:flex-end;
+  margin-left: -20vmin;
+  margin-bottom:10vmin;
+  visibility: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Spear-enter {
+  opacity: 0;
+  
+}
+
+.Spear-enter-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(500px, -600px, 0);
+  transition: transform 1000ms;
+}
+
+.Skill3{
+  width:150px;
+  height: 300px;
+  align-self: right;
+  visibility: hidden;
+  margin-left: 100vmin;
+  }
+
+.Thunder-enter-active {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(-50px, 150px, 0);
+    transition: transform 500ms;
+  }
+
+.ContainerStats{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  width:100%;
+  height:100%;
+  justify-content: space-around;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ContainerQuests{
+ text-align: center;
+  color:yellow;
+  
 }
